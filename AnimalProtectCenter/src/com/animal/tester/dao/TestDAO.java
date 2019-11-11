@@ -55,7 +55,7 @@ public class TestDAO {
 	}
 	
 	
-	public void insert(TestVO vo) {
+	public String insert(TestVO vo) {
 		Connection conn = null;
 		PreparedStatement preStatement = null;
 		
@@ -74,5 +74,7 @@ public class TestDAO {
 		} finally {
 			DBCP.close(conn, preStatement);
 		}
+		
+		return vo.getId();
 	}
 }

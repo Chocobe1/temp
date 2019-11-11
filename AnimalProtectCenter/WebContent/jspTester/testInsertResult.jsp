@@ -8,15 +8,14 @@
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8">
-		<title>(test)Select Result</title>
+		<title>Insert title here</title>
 	</head>
 
 	<body>
-		<h3>Test Select 결과</h3>
+		<h3>test Insert Result</h3>
 		
 		<p>${result}</p>
-		<p>${vo.id}</p>
-		<p>${vo.password}</p>
+		<p>"${id}"님, 회원가입을 축하드립니다</p>
 		
 		<%@ include file="testHome.jsp" %>
 	</body>

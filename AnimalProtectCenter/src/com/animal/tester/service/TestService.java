@@ -25,7 +25,7 @@ public class TestService {
 	}
 	
 	
-	public void insert(TestVO vo) {
-		dao.insert(vo);
+	public String insert(TestVO vo) {
+		return dao.insert(vo);
 	}
 }
