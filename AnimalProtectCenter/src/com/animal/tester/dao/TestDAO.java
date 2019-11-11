@@ -55,7 +55,7 @@ public class TestDAO {
 	}
 	
 	
-	public String insert(TestVO vo) {
+	public void insert(TestVO vo) {
 		Connection conn = null;
 		PreparedStatement preStatement = null;
 		
@@ -74,7 +74,27 @@ public class TestDAO {
 		} finally {
 			DBCP.close(conn, preStatement);
 		}
+	}
+	
+	
+	public void update(TestVO vo) {
+		Connection conn = null;
+		PreparedStatement preStatement = null;
 		
-		return vo.getId();
+		try {
+			String sql = "UPDATE TEST SET PASSWORD=? WHERE ID=?";
+			conn = DBCP.getConnection();
+			preStatement = conn.prepareStatement(sql);
+			preStatement.setString(1, vo.getPassword());
+			preStatement.setString(2, vo.getId());
+			
+			System.out.println(preStatement.executeUpdate());
+			
+		} catch(SQLException e) {
+			System.out.println("TestDAO - update() 에러 : " + e.getMessage());
+			
+		} finally {
+			DBCP.close(conn, preStatement);
+		}
 	}
 }

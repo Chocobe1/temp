@@ -1,7 +1,6 @@
 package com.animal.tester.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,17 +23,18 @@ public class TestInsertController implements SubController {
 		vo.setPassword(pw);
 		
 		TestService service = TestService.getInstance();
-		String resultID = service.insert(vo);
+		service.insert(vo);
 		
 		TestVO result = service.select(id);
 		if(result.getId().equals(id)) {
 			req.setAttribute("id", result.getId());
 			path = "/jspTester/testInsertResult.jsp";
+			HttpUtil.forward(req, resp, path);
 			
 		} else {
 			req.setAttribute("result", "서버문제에 의해 회원가입이 실패하였습니다");
+			path = "/jspTester/testInsert.jsp";
+			HttpUtil.forward(req, resp, path);
 		}
-		
-		HttpUtil.forward(req, resp, path);
 	}
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.animal.controller.SubController;
+import com.animal.tester.service.TestService;
 import com.animal.tester.vo.TestVO;
 
 public class TestUpdateController implements SubController {
@@ -19,6 +20,17 @@ public class TestUpdateController implements SubController {
 		String path = "";
 		
 		TestVO vo = new TestVO();
+		vo.setId(id);
+		vo.setPassword(pw);
 		
+		System.out.println("ID : " + id + ", PW : " + pw);
+		
+		TestService service = TestService.getInstance();
+		service.update(vo);
+		
+		req.setAttribute("id", vo.getId());
+		path = "/jspTester/testUpdateResult.jsp";
+		
+		HttpUtil.forward(req, resp, path);
 	}
 }

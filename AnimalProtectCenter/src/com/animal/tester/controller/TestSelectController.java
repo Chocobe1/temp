@@ -23,12 +23,16 @@ public class TestSelectController implements SubController {
 		
 		if(vo == null) {
 			req.setAttribute("result", "검색된 정보가 없습니다");
+			
+		} else {
+			req.setAttribute("vo", vo);
 		}
-		
-		req.setAttribute("vo", vo);
 		
 		if(job.equals("select")) {
 			path = "/jspTester/testSelectResult.jsp";
+			
+		} else if(job.equals("update")) {
+			path = "/jspTester/testUpdate.jsp";
 		}
 		
 		HttpUtil.forward(req, resp, path);

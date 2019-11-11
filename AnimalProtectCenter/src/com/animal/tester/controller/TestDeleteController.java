@@ -13,9 +13,6 @@ public class TestDeleteController implements SubController {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) 
 					throws ServletException, IOException {
-		PrintWriter out = resp.getWriter();
-		out.print("<h1>Test Delete Controller Page</h1>");
 		
-		out.close();
 	}
 }
