@@ -4,11 +4,28 @@ import com.animal.tester.dao.TestDAO;
 import com.animal.tester.vo.TestVO;
 
 public class TestService {
-	private TestDAO dao = new TestDAO();
+	private static TestService service;
+	private static TestDAO dao;
+	
+	static {
+		service = new TestService();
+		dao = TestDAO.getInstance();
+	}
 	
 	private TestService() { }
 	
-//	public void testSelect(TestVO vo) {
-//		dao.testSelect(vo);
-//	}
+	
+	public static TestService getInstance() {
+		return service;
+	}
+	
+	
+	public TestVO select(String id) {
+		return dao.select(id);
+	}
+	
+	
+	public void insert(TestVO vo) {
+		dao.insert(vo);
+	}
 }

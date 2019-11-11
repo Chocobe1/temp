@@ -23,7 +23,7 @@ public class DBCP {
 		
 		try {
 			InitialContext initContext = new InitialContext();
-			ds = (DataSource)initContext.lookup("jdbc/animal/dbcp");
+			ds = (DataSource)initContext.lookup("java:comp/env/jdbc/test/dbcp");
 			
 		} catch(NamingException e) {
 			System.out.println("DataSource 에러 : " + e.getMessage());
@@ -51,7 +51,10 @@ public class DBCP {
 // close Resource
 	public static void close(Connection conn, PreparedStatement preStatement, ResultSet resultSet) {
 		try {
-			resultSet.close();
+			if(resultSet != null) {
+				resultSet.close();
+			}
+			
 			close(conn, preStatement);
 			
 		} catch(SQLException e) {
@@ -61,7 +64,11 @@ public class DBCP {
 	
 	public static void close(Connection conn, PreparedStatement preStatement) {
 		try {
-			preStatement.close();
+			if(preStatement != null) {
+				preStatement.close();
+			}
+			
+			close(conn);
 			
 		} catch(SQLException e) {
 			System.out.println("DBCP close() - PreparedStatement 에러 : " + e.getMessage());
@@ -70,7 +77,9 @@ public class DBCP {
 	
 	public static void close(Connection conn) {
 		try {
-			conn.close();
+			if(conn != null) {
+				conn.close();
+			}
 			
 		} catch(SQLException e) {
 			System.out.println("DBCP close() - Connection 에러 : " + e.getMessage());

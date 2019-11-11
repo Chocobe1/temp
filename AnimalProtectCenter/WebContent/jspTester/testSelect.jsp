@@ -15,6 +15,8 @@
 		<h1>📑 testSelect.jsp View</h1>
 		
 		<form action="testSelect.testDo" method="POST">
+			ID : <input type="text" name="id"/>
+			<input type="hidden" name="job" value="select"/>
 			<input type="submit" value="서브컨트롤러 요청"/>
 		</form>
 	</body>
