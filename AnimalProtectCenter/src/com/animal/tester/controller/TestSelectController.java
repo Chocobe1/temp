@@ -33,6 +33,9 @@ public class TestSelectController implements SubController {
 			
 		} else if(job.equals("update")) {
 			path = "/jspTester/testUpdate.jsp";
+			
+		} else if(job.equals("delete")) {
+			path = "/jspTester/testDelete.jsp";
 		}
 		
 		HttpUtil.forward(req, resp, path);

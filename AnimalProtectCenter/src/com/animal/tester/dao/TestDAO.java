@@ -97,4 +97,26 @@ public class TestDAO {
 			DBCP.close(conn, preStatement);
 		}
 	}
+	
+	
+	public void delete(TestVO vo) {
+		Connection conn = null;
+		PreparedStatement preStatement = null;
+		
+		try {
+			String sql = "DELETE FROM TEST WHERE ID=? AND PASSWORD=?";
+			conn = DBCP.getConnection();
+			preStatement = conn.prepareStatement(sql);
+			preStatement.setString(1, vo.getId());
+			preStatement.setString(2, vo.getPassword());
+			
+			preStatement.executeUpdate();
+			
+		} catch(SQLException e) {
+			System.out.println("TestDAO - delete() 에러 : " + e.getMessage());
+			
+		} finally {
+			DBCP.close(conn, preStatement);
+		}
+	}
 }

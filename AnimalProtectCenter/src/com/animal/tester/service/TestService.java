@@ -32,4 +32,8 @@ public class TestService {
 	public void update(TestVO vo) {
 		dao.update(vo);
 	}
+	
+	public void delete(TestVO vo) {
+		dao.delete(vo);
+	}
 }
