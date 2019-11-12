@@ -4,8 +4,8 @@
 	
 <!-- Listener -->
 	<listener>
-		<!-- <listener-class>com.animal.listener.ContextListener</listener-class> -->
-		<listener-class>com.animal.tester.listener.TestContextListener</listener-class>
+		<listener-class>com.animal.listener.ContextListener</listener-class>
+		<!-- <listener-class>com.animal.tester.listener.TestContextListener</listener-class> -->
 	</listener>
 	
 	
@@ -46,8 +46,8 @@
 	
 <!-- index path -->
 	<welcome-file-list>
-		<welcome-file>/jspTester/testIndex.jsp</welcome-file>
-		<!-- <welcome-file>/view/index.jsp</welcome-file> -->
+		<!-- <welcome-file>/jspTester/testIndex.jsp</welcome-file> -->
+		<welcome-file>/view/index.jsp</welcome-file>
 	</welcome-file-list>
 	
 </web-app>

@@ -1,4 +1,4 @@
-package com.animal.tester.dbConnection;
+package com.animal.dbConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

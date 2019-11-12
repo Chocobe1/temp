@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.animal.tester.dbConnection.DBCP;
+import com.animal.dbConnection.DBCP;
 import com.animal.tester.vo.TestVO;
 
 
