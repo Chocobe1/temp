@@ -26,7 +26,8 @@
 			<a href="memberLogIn.jsp">로그인</a>
 			
 		<% } else { %>
-			<a href="memberLogOut.do">로그아웃</a>
+			<a href="memberLogOut.do">로그아웃</a><br/>
+			<a href="memberLeave.do">탈퇴</a>
 		<% } %>
 	</body>
 </html>

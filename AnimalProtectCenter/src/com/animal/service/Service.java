@@ -27,4 +27,8 @@ public class Service {
 	public MemberVO memberLogIn(String nickName, String password) {
 		return dao.memberSelect(nickName, password);
 	}
+	
+	public int memberLeave(String nickName) {
+		return dao.memberDelete(nickName);
+	}
 }

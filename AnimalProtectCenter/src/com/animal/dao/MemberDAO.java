@@ -83,4 +83,26 @@ public class MemberDAO {
 		
 		return memberVO;
 	}
+	
+	
+	public int memberDelete(String nickName) {
+		int result = 0;
+		
+		try {
+			String sql = "DELETE FROM MEMBER WHERE NICK_NAME=?";
+			conn = DBCP.getConnection();
+			preStatement = conn.prepareStatement(sql);
+			preStatement.setString(1, nickName);
+			
+			result = preStatement.executeUpdate();
+			
+		} catch(SQLException e) {
+			System.out.println("MemberDAO - memberDelete() 에러 : " + e.getMessage());
+			
+		} finally {
+			DBCP.close(conn, preStatement);
+		}
+		
+		return result;
+	}
 }
