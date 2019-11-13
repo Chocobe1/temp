@@ -15,6 +15,6 @@
 		<h3>회원탈퇴 결과 페이지</h3>
 		<p>${error}</p>
 		<p>${result}</p>
-		<a href="index.jsp">홈으로</a>
+		<a href="../index.jsp">홈으로</a>
 	</body>
 </html>

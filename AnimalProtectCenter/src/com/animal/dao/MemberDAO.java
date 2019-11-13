@@ -105,4 +105,8 @@ public class MemberDAO {
 		
 		return result;
 	}
+	
+	public void test(String test) {
+		
+	}
 }

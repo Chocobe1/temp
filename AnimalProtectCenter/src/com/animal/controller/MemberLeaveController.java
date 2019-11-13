@@ -14,7 +14,7 @@ public class MemberLeaveController implements SubController {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) 
 					throws ServletException, IOException {
-		String path = "/view/memberLeaveResult.jsp";
+		String path = "/view/memberView/memberLeaveResult.jsp";
 		HttpSession session = req.getSession();
 		MemberVO memberVO = (MemberVO)session.getAttribute("memberLogIn");
 		String nickName = memberVO.getNickName();

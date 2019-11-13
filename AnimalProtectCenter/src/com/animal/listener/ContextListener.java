@@ -17,10 +17,10 @@ public class ContextListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		Map<String, SubController> controllers = new HashMap<String, SubController>();		
 		
-		controllers.put("/view/memberJoin.do", new MemberJoinController());
-		controllers.put("/view/memberLogIn.do", new MemberLogInController());
-		controllers.put("/view/memberLogOut.do", new MemberLogOutController());
-		controllers.put("/view/memberLeave.do", new MemberLeaveController());
+		controllers.put("/view/memberView/memberJoin.do", new MemberJoinController());
+		controllers.put("/view/memberView/memberLogIn.do", new MemberLogInController());
+		controllers.put("/view/memberView/memberLogOut.do", new MemberLogOutController());
+		controllers.put("/view/memberView/memberLeave.do", new MemberLeaveController());
 		
 		event.getServletContext().setAttribute("controllers", controllers);
 	}

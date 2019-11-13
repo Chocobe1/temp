@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 public class MemberLogInController implements SubController {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		String path = "/view/memberLogInResult.jsp";
+		String path = "/view/memberView/memberLogInResult.jsp";
 		String nickName = req.getParameter("nickName");
 		String password = req.getParameter("password");
 		

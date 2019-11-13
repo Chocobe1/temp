@@ -22,12 +22,12 @@
 		<%
 		if(session.getAttribute("memberLogIn") == null) {
 		%>
-			<a href="memberJoin.jsp">회원가입</a><br/>
-			<a href="memberLogIn.jsp">로그인</a>
+			<a href="memberView/memberJoin.jsp">회원가입</a><br/>
+			<a href="memberView/memberLogIn.jsp">로그인</a>
 			
 		<% } else { %>
-			<a href="memberLogOut.do">로그아웃</a><br/>
-			<a href="memberLeave.do">탈퇴</a>
+			<a href="memberView/memberLogOut.do">로그아웃</a><br/>
+			<a href="memberView/memberLeave.do">탈퇴</a>
 		<% } %>
 	</body>
 </html>

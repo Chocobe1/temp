@@ -22,6 +22,6 @@
 		<p>Addr : ${result.addr}</p>
 		<p>Phone : ${result.phone}</p>
 		
-		<a href="index.jsp">홈으로</a>
+		<a href="../index.jsp">홈으로</a>
 	</body>
 </html>

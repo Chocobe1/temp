@@ -13,7 +13,7 @@ public class MemberLogOutController implements SubController {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) 
 					throws ServletException, IOException {
 		ServletContext context = req.getServletContext();
-		String url = context.getContextPath() + "/view/index.jsp";
+		String url = context.getContextPath() + "/view/memberView/index.jsp";
 		
 		req.getSession().removeAttribute("memberLogIn");
 		

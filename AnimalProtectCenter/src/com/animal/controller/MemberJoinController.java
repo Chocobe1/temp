@@ -13,7 +13,7 @@ public class MemberJoinController implements SubController {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) 
 					throws ServletException, IOException {
-		String path = "/view/memberJoinResult.jsp";
+		String path = "/view/memberView/memberJoinResult.jsp";
 		String nickName = req.getParameter("nickName");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");

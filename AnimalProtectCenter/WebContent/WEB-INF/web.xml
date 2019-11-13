@@ -5,7 +5,6 @@
 <!-- Listener -->
 	<listener>
 		<listener-class>com.animal.listener.ContextListener</listener-class>
-		<!-- <listener-class>com.animal.tester.listener.TestContextListener</listener-class> -->
 	</listener>
 	
 	
