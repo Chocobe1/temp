@@ -23,7 +23,7 @@ public class DBCP {
 		
 		try {
 			InitialContext initContext = new InitialContext();
-			ds = (DataSource)initContext.lookup("java:comp/env/jdbc/test/dbcp");
+			ds = (DataSource)initContext.lookup("java:comp/env/jdbc/animalBridge/dbcp");
 			
 		} catch(NamingException e) {
 			System.out.println("DataSource 에러 : " + e.getMessage());
